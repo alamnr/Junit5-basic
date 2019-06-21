@@ -4,6 +4,8 @@ import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+//@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+//@TestInstance(TestInstance.Lifecycle.PER_METHOD) // default
 class MathUtilsTest {
 
     MathUtils mathUtils;
