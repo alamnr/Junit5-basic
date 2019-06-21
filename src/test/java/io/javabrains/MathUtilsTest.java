@@ -44,6 +44,11 @@ class MathUtilsTest {
         );
     }
 
+    @RepeatedTest(3)
+    void testRepetition(RepetitionInfo repetitionInfo){
+        assertEquals(4,mathUtils.add(2,2));
+    }
+
     @Nested
     class nestedAddTest{
         @Test
