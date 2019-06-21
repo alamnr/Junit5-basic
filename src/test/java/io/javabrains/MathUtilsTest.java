@@ -44,6 +44,18 @@ class MathUtilsTest {
         );
     }
 
+    @Nested
+    class nestedAddTest{
+        @Test
+        void testAddPositive(){
+           assertEquals(4,mathUtils.add(2,2));
+        }
+        @Test
+        void testAddNegative(){
+            assertEquals(-4,mathUtils.add(-2,-2));
+        }
+    }
+
     @Test
     void divide() {
         assertThrows(ArithmeticException.class,()->mathUtils.divide(2,0),"Divide");
