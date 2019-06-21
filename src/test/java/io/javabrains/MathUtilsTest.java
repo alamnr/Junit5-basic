@@ -35,7 +35,13 @@ class MathUtilsTest {
     }
 
     @Test
+    @DisplayName("Test assert all")
     void multiply() {
+        assertAll(
+                () -> assertEquals(4,mathUtils.multiply(2,2)),
+                () -> assertEquals(0,mathUtils.multiply(2,0)),
+                () -> assertEquals(-2,mathUtils.multiply(2,-1))
+        );
     }
 
     @Test
@@ -65,5 +71,6 @@ class MathUtilsTest {
     void testDisabled(){
         fail("This should fail");
     }
+
 
 }
