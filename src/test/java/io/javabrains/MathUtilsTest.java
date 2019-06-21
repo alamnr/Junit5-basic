@@ -9,6 +9,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class MathUtilsTest {
 
     MathUtils mathUtils;
+    TestInfo testInfo;
+    TestReporter testReporter;
 
     @BeforeAll
     static void beforeAllInit(){
@@ -21,8 +23,11 @@ class MathUtilsTest {
     }
 
     @BeforeEach
-    void init(){
+    void init(TestInfo testInfo, TestReporter testReporter){
+        this.testInfo = testInfo;
+        this.testReporter = testReporter;
         mathUtils = new MathUtils();
+        testReporter.publishEntry("display Name: " + testInfo.getDisplayName());
     }
 
     @AfterEach
@@ -37,6 +42,7 @@ class MathUtilsTest {
     @Test
     @DisplayName("Test assert all")
     void multiply() {
+        System.out.println("display Name: " + testInfo.getDisplayName());
         assertAll(
                 () -> assertEquals(4,mathUtils.multiply(2,2)),
                 () -> assertEquals(0,mathUtils.multiply(2,0)),
