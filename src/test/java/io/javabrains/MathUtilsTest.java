@@ -59,4 +59,11 @@ class MathUtilsTest {
         assertEquals(314.1592653589793,mathUtils.computeCircleArea(10));
     }
 
+    @Test
+    @DisplayName("Disabled  Test")
+    @Disabled
+    void testDisabled(){
+        fail("This should fail");
+    }
+
 }
